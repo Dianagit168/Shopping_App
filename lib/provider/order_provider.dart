@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/provider/card_provider.dart';
 
 class OrderItemModel {
+  final String id;
+  final double totalPrice;
+  final DateTime orderTime;
+  final List<CardModel> cardItems;
   OrderItemModel({
     required this.id,
     required this.totalPrice,
     required this.orderTime,
     required this.cardItems,
   });
-
-  final String id;
-  final double totalPrice;
-  final DateTime orderTime;
-  final List<CardMoel> cardItems;
 }
 
 class OrdersProvider with ChangeNotifier {
@@ -20,7 +19,7 @@ class OrdersProvider with ChangeNotifier {
 
   List<OrderItemModel> get myOrders => _myOrders;
   void addOrder({
-    required List<CardMoel> cardItems,
+    required List<CardModel> cardItems,
     required double totalPrice,
   }) {
     _myOrders.add(

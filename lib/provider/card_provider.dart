@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CardMoel {
+class CardModel {
   final String? id;
   final String? title;
   final String? price;
   final int? qty;
 
-  CardMoel(
+  CardModel(
       {required this.id,
       required this.title,
       required this.price,
@@ -14,25 +14,29 @@ class CardMoel {
 }
 
 class CardProvider extends ChangeNotifier {
-  Map<String, CardMoel> _item = {};
-  Map<String, CardMoel> get item => _item;
-  void addItem({required String? productId, price, title}) {
-    if (_item.containsKey(productId)) {
+  Map<String, CardModel> _item = {}; //why use map?
+  Map<String, CardModel> get item => _item;
+  void addItem({required String? productId, productPrice, productTitle}) {
+    if (_item.containsKey(productId)) //បានន័យAddថា item ហើយ
+    {
       _item.update(
-          productId!,
-          (value) => CardMoel(
-              id: value.id,
-              title: value.title,
-              price: value.price,
-              qty: value.qty! + 1));
+        // click item ដដែលៗ
+        //do not know
+        productId!,
+        (value) => CardModel(
+            id: value.id,
+            title: value.title,
+            price: value.price,
+            qty: value.qty! + 1),
+      );
       notifyListeners();
     } else {
       _item.putIfAbsent(
         productId!,
-        () => CardMoel(
+        () => CardModel(
           id: DateTime.now().toString(),
-          title: title.toString(),
-          price: price.toString(),
+          title: productTitle.toString(),
+          price: productPrice.toString(),
           qty: 1,
         ),
       );

@@ -35,6 +35,9 @@ class ProductProvider extends ChangeNotifier {
         price: 1000),
   ];
   List<ProductModel> get availProducts => _availProducts;
+  List<ProductModel> get favProducts {
+    return _availProducts.where((product) => product.isFavorite).toList();
+  }
   // void addProducts(value) {
   //   availProducts.addAll(value);
   //   notifyListeners();

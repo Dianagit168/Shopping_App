@@ -30,7 +30,7 @@ class GridProductItem extends StatelessWidget {
                     : Icon(Icons.favorite_border),
                 onPressed: () {
                   product.toggleIsFav();
-                  print('product.isFavorite ${product.isFavorite}');
+                  //print('product.isFavorite ${product.isFavorite}');
                 },
               ),
               trailing: IconButton(
@@ -38,8 +38,8 @@ class GridProductItem extends StatelessWidget {
                 onPressed: () {
                   card.addItem(
                       productId: product.id,
-                      price: product.price,
-                      title: product.title);
+                      productPrice: product.price,
+                      productTitle: product.title);
                 },
               ),
             ),

@@ -44,7 +44,7 @@ class _OrderItemTileState extends State<OrderItemTile> {
                     .map((product) => Row(
                           children: [
                             Expanded(child: Text("${product.title}")),
-                            Text("${product.qty}x"),
+                            Text(" x${product.qty}"),
                             const SizedBox(
                               width: 10,
                             ),

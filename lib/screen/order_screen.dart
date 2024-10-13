@@ -4,8 +4,7 @@ import 'package:shopping_app/provider/order_provider.dart';
 import 'package:shopping_app/widget/order_item.dart';
 
 class OrdersScreen extends StatelessWidget {
-  static const id = '/OrdersScreen';
-  const OrdersScreen({Key? key}) : super(key: key);
+  const OrdersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
